@@ -4,8 +4,10 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(0.96 0.01 260);
+  /* --background: oklch(0.96 0.01 260); */
+  --background: oklch(1 0 0);
   --foreground: oklch(0.18 0.02 260);
+  --colored-foreground: oklch(0.38 0.0963 251.95);
   --card: oklch(0.97 0.01 260);
   --card-foreground: oklch(0.18 0.02 260);
   --popover: oklch(1.00 0.00 0);
@@ -15,14 +17,14 @@
   --secondary: oklch(0.89 0.10 250);
   --secondary-foreground: oklch(0.18 0.02 260);
   --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --muted-foreground: oklch(0.7 0 0);
+  --accent: oklch(0.38 0.0963 251.95);
+  --accent-foreground: oklch(0.97 0.01 260);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --ring: oklch(0.8 0.19 83 / 0.5);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -42,6 +44,7 @@
 .dark {
   --background: oklch(0.15 0.02 255);
   --foreground: oklch(0.96 0.02 270);
+  --colored-foreground: oklch(0.76 0.1595 69.51);
   --card: oklch(0.20 0.03 260);
   --card-foreground: oklch(0.96 0.02 270);
   --popover: 	oklch(0.26 0.04 260);
@@ -77,6 +80,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-colored-foreground: var(--colored-foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -111,42 +115,68 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --font-figtree: var(--font-figtree)
+  --spacing-sidebar: min(400px, 100vw);
+  --text-sm: 17px;
+  --text-base: 18px;
+  --text-lg: 19px;
+  --text-xl: 21px;
+  --text-2xl: 22px;
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border outline-none;
+  }
+
+  :root {
+    @apply overflow-x-clip
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground antialiased;
+  }
+
+  section:not([aria-label="Notifications alt+T"]) {
+    @apply w-full h-full min-h-[100dvh] relative px-5 sm:px-12 md:px-24 py-14; 
+  }
+
+  .course-heading {
+    @apply px-5 sm:px-12 md:px-24 pt-24
+  }
+
+  h1 {
+    @apply text-3xl font-bold
   }
 }
 
-/* @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to bottom, var(--background), var(--background) 50%, var(--color-stone-800) 50%, var(--color-stone-800));
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.main-grid { 
+  grid-template-areas: "csus csus text text ca ca" "csus csus text text ca   ca" "csin  csin text text cma cma " "csin  csin  acca acca cma cma";
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 4fr 4fr 1fr 1fr;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.ca-card-area {
+  grid-area: ca;
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
+.csus-card-area {
+  grid-area: csus;
+}
+.csin-card-area {
+  grid-area: csin;
+}
+.cma-card-area {
+  grid-area: cma;
+}
+.acca-card-area {
+  grid-area: acca;
+}
+.text-card-area {
+  grid-area: text;
+}
