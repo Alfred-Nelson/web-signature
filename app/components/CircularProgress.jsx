@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import { motion } from "framer-motion"; // Make sure this is the correct import
 
