@@ -37,8 +37,11 @@ const CallbackForm = ({ form: formName }) => {
   async function onSubmit() {
     try {
       const values = form.getValues();
-      await insertContactToSheet(values);
+      const response = await insertContactToSheet(values);
       // await helpers.sleep(2000)
+      if(!response.success) {
+        throw response.error
+      }
       form.reset();
       toast.success("We have recieved your request. Will call you back as soon as possible.")
     } catch(e) {

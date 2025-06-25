@@ -74,6 +74,10 @@ export async function insertContactToSheet(formData) {
     const submissionSheetName = "submissions";
     const inferenceSheetName = "infer";
 
+    console.log("\n\n**************************\n\n")
+    console.log({googleCreds, spreadsheetId}, "wht is wrong ... I don't understand")
+    console.log("\n\n**************************\n\n")
+
     if (!googleCreds) {
       throw new Error("Contact handler not found");
     }
@@ -81,10 +85,15 @@ export async function insertContactToSheet(formData) {
       throw new Error("Contact handler workspace not found");
     }
 
-    console.log("hello", JSON.stringify(JSON.parse(googleCreds)), JSON.parse(googleCreds).private_key)
+    const parsedCreds = JSON.parse(googleCreds)
+
+
+    console.log("\n\n**************************\n\n")
+    console.log(parsedCreds)
+    console.log("\n\n**************************\n\n")
 
     const gAuth = new google.auth.GoogleAuth({
-      credentials: JSON.parse(googleCreds),
+      credentials: parsedCreds,
       scopes: ["https://www.googleapis.com/auth/spreadsheets"],
     });
 
