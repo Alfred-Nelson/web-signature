@@ -2,7 +2,7 @@ import { Mada } from "next/font/google";
 import "./globals.css";
 import { cj } from "@/lib/utils";
 import Header from "./Header";
-import { AnimatePresence } from "motion/react";
+import { AnimatePresence } from "@/lib/framer-motion";
 import EndlessImageScroll from "./components/EndlessImageScroll";
 import { MapPin, Phone } from "lucide-react";
 import Link from "next/link";

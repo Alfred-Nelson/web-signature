@@ -11,7 +11,7 @@ import {
   useTime,
   useTransform,
   useVelocity,
-} from "motion/react";
+} from "@/lib/framer-motion";
 import { cj } from "@/lib/utils";
 
 const EndlessImageScroll = ({

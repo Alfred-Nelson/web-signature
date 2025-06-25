@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "motion/react";
+import { motion } from "@/lib/framer-motion";
 import { cj } from "@/lib/utils";
 import NamedLogo from "../public/images/namedLogo.svg";
 import Link from "next/link";

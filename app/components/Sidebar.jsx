@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "motion/react";
+import { motion } from "@/lib/framer-motion";
 import { cn } from "@/lib/utils";
 
 const Sidebar = () => {
