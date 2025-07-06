@@ -23,14 +23,14 @@ export default function Home() {
               width={300}
               height={76}
               className={cj(
-                "--initial-- opacity-0 inline-block",
+                "--initial-- opacity-[0.01] inline-block",
                 "w-96 rounded-md py-2 h-auto"
               )}
             />
             <h1 className={cj("w-full mt-6 text-center")}>
               <span
                 className={cj(
-                  "--initial-- opacity-0 inline-block",
+                  "--initial-- opacity-[0.01] inline-block",
                   "text-colored-foreground dark:text-foreground"
                 )}
               >
@@ -40,7 +40,7 @@ export default function Home() {
               <span
                 delay={0.2}
                 className={cj(
-                  "--initial-- opacity-0 inline-block",
+                  "--initial-- opacity-[0.01] inline-block",
                   "text-foreground dark:text-colored-foreground"
                 )}
               >
@@ -49,7 +49,7 @@ export default function Home() {
             </h1>
             <p
               className={cj(
-                "--initial-- opacity-0",
+                "--initial-- opacity-[0.01]",
                 // "text-lg lg:text-2xl",
                 "text-xl text-center",
                 "lg:max-w-[40rem]",
@@ -65,7 +65,7 @@ export default function Home() {
           <div
             className={cj(
               "cards w-full h-fit grid grid-cols-1 lg:grid-cols-5 gap-4",
-              "[&>*]:hover:scale-105 [&>*]:opacity-0 [&>*]:--initial--",
+              "[&>*]:hover:scale-105 [&>*]:opacity-[0.01] [&>*]:--initial--",
               // "has-hover:[&>*:not(:hover)]:scale-95"
             )}
           >
@@ -86,6 +86,7 @@ export default function Home() {
               fullName={["Cost and Management", "Accounting US"]}
             />
             <Card
+              // asImage="/images/acca-seeklogo.png"
               to="/acca"
               name={"ACCA"}
               fullName={[

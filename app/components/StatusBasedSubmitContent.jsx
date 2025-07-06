@@ -21,7 +21,7 @@ import { motion, AnimatePresence } from "@/lib/framer-motion";
 const StatusBasedSubmitContent = ({ status, content }) => {
   return (
     <span className="relative h-fit w-full">
-        <span aria-hidden className="opacity-0 flex items-center justify-center">{content[status]}</span>
+        <span aria-hidden className="opacity-[0.01] flex items-center justify-center">{content[status]}</span>
       <AnimatePresence initial={false} mode="wait">
         {status === "idle" && (
           <motion.span

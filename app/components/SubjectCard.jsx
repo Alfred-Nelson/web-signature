@@ -115,7 +115,7 @@ const SubjectCard = (subject) => {
                 onClick={() => {}}
                 className={cj(
                   "cursor-pointer text-primary flex items-center gap-x-1.5 whitespace-nowrap",
-                  "md:opacity-0 md:translate-x-10",
+                  "md:opacity-[0.01] md:translate-x-10",
                   "focus:opacity-100 focus-within:translate-x-0",
                   "group-hover:opacity-100 group-hover:translate-x-0",
                   "transition ease-out duration-300"

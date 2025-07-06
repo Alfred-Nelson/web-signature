@@ -13,9 +13,20 @@ import { Toaster } from "./components/ui/Sonner";
 
 const fontMada = Mada({ subsets: ["latin"] });
 
+/**
+ * @type {import("next").Metadata}
+ */
 export const metadata = {
-  title: "Signature",
-  description: "Where your signature gains value",
+  title: "Signature Institute of Commerce and Management",
+  description: "CA, CMA IND, CMA US, CS, ACCA courses in Valanchery, Calicut. Get the top quality study resources, personalized cubicles and sessions, one-on-one and group online and offline mentoring, chapterwise and subjectwise mock tests",
+  openGraph: {
+    title: "Make your signature value with Signature Institute of Commerce and Management",
+    description: "Get the top quality study resources, personalized cubicles and sessions, one-on-one and group online and offline mentoring, chapterwise and subjectwise mock tests for all CA, CMA IND, CMA US, CS, ACCA students in Valanchery, Calicut road"
+  },
+  twitter: {
+    title: "Make your signature value with Signature Institute of Commerce and Management",
+    description: "Get the top quality study resources, personalized cubicles and sessions, one-on-one and group online and offline mentoring, chapterwise and subjectwise mock tests for all CA, CMA IND, CMA US, CS, ACCA students in Valanchery, Calicut road"
+  }
 };
 
 const backgroundImages = [
@@ -48,12 +59,10 @@ const backgroundImages = [
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
       <body
         className={cj(
           // "dark",
+          "antialiased",
           fontMada.className
         )}
       >
@@ -87,7 +96,7 @@ export default function RootLayout({ children }) {
                   <span>Ayesha Tower</span>
                   <span>Opp. Reliance Petrol Pump</span>
                   <span>Calicut Rd, Valanchery</span>
-                  <span>Kerala, 676582</span>
+                  <span>Kerala, 676552</span>
                 </p>
               </div>
               <div className="w-full flex items-start gap-x-4 text-background dark:text-foreground">
